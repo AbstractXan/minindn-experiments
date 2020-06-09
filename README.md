@@ -24,3 +24,5 @@ Change `./src/topology.conf` to configure nodes as follow:
 	- Runs NDN application in the background
 	- The path provided should be relative to `/tmp/minindn/x` where x is current node
 	- Refer to topology.conf for usage
+
+Note: Use non-zero delays for ndn_network_helper to correctly add routes to nodes in the network
