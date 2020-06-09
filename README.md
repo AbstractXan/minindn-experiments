@@ -18,6 +18,7 @@ Change `./src/topology.conf` to configure nodes as follow:
 2. prefix : 
 	- _Values_ :(default: /example/testApp)
 	- Configures FIBs of other nodes with the current node as producer of the data prefix 
+	- Only valid for **producers**
 3. run : (default: '')
 	- _Values_ :(default: /example/testApp)
 	- Runs NDN application in the background
