@@ -10,6 +10,8 @@ from minindn.apps.app_manager import AppManager
 from minindn.apps.nfd import Nfd
 from minindn.helpers.ndn_routing_helper import NdnRoutingHelper
 
+from minindn.apps.tshark import Tshark
+
 if __name__ == '__main__':
     setLogLevel('info')
 
@@ -27,12 +29,17 @@ if __name__ == '__main__':
 
     ndn.start()
 
+    ##########
+    info('Starting tshark logging on nodes\n')
+    tshark = AppManager(ndn, ndn.net.hosts, Tshark, logFolder="../log/", singleLogFile=True)
+    #########
+    
     info('Starting NFD on nodes\n')
     nfds = AppManager(ndn, ndn.net.hosts, Nfd)
+
     info('Adding static routes to NFD\n')
     grh = NdnRoutingHelper(ndn.net, ndn.args.faceType, ndn.args.routingType)
 
-    ####### Configuring nodes based on input parameters
     info("\nConfiguring nodes\n\n")
     for host in ndn.net.hosts:
 	value = host.params['params'].get('type',"client")
@@ -47,7 +54,6 @@ if __name__ == '__main__':
             info(str(host) + " is running "+ run_cmd+"\n")
     info("\n")
     grh.calculateNPossibleRoutes()
-    ######## 
 
     MiniNDNCLI(ndn.net)
 

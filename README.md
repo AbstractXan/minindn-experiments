@@ -4,14 +4,14 @@ Experiments running NDN applications on Mini-NDN.
 ## Running scenarios
 Build using `./build.sh`. Builds producer.cpp and consumer.cpp and copies to `/tmp/minindn/apps`. This could then be accessed by minindn nodes as shown below.
 
-Run minindn: `./run.sh`
+Run experiment: `./run.sh`
 
-### Scenario 1:
-Host 'a' is producer with producer already running in back ground. 
+### Scenario 1: Basic
+Host 'a' is producer with producer already running in background. 
 Run `<host> ../apps/consumer` in other hosts.
 
-### Scenario 2:
-Change `./src/topology.conf` to configure nodes as follow:
+### Scenario 2: Topology.conf
+Change `./src/topology.conf` to configure nodes as follows:
 1. type : 
 	- _Values_ : server/client  (default value: client)
 	- Identifies the type of node
@@ -26,3 +26,19 @@ Change `./src/topology.conf` to configure nodes as follow:
 	- Refer to topology.conf for usage
 
 Note: Use non-zero delays for ndn_network_helper to correctly add routes to nodes in the network
+
+Host 'a' is producer with producer already running in background. 
+Run `<host> ../apps/consumer` in other hosts.
+
+### Scenario 3 : PCAP Logging
+Default logging done in `/tmp/minindn/log`.
+Logging is done using tshark as shown in `src/experiment.py` :
+```python
+tshark = AppManager(ndn, ndn.net.hosts, Tshark, logFolder="../log/", singleLogFile=True)
+```
+Change the following parameters in `src/experiment.py` to if required:
+1. logFolder : Folder where PCAP file(s) will be stored for each node
+2. singleLogFile : Single PCAP file per node, or individual PCAP for each interface
+
+Host 'a' is producer with producer already running in background. 
+Run `<host> ../apps/consumer` in other hosts.
