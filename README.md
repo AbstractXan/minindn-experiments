@@ -12,7 +12,7 @@ Run `<host> ../apps/consumer` in other hosts.
 
 ### Scenario 2: Topology.conf
 
-[![asciicast](https://asciinema.org/a/gbkU4ITHnt4fs9buS5YcT5r0b.svg)](https://asciinema.org/a/gbkU4ITHnt4fs9buS5YcT5r0b)
+[Asciinema demo](https://asciinema.org/a/gbkU4ITHnt4fs9buS5YcT5r0b)
 
 Change `./src/topology.conf` to configure nodes as follows:
 1. type : 
@@ -35,7 +35,7 @@ Run `<host> ../apps/consumer` in other hosts.
 
 ### Scenario 3 : PCAP Logging
 
-[![asciicast](https://asciinema.org/a/WnwGRzs4NTZTU1WVKUHUnNP8I.svg)](https://asciinema.org/a/WnwGRzs4NTZTU1WVKUHUnNP8I)
+[Asciinema demo](https://asciinema.org/a/WnwGRzs4NTZTU1WVKUHUnNP8I)
 
 Default logging done in `/tmp/minindn/log`.
 Logging is done using tshark as shown in `src/experiment.py` :
