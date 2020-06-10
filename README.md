@@ -1,6 +1,9 @@
 # minindn-experiments
 Experiments running NDN applications on Mini-NDN.
 
+## Requirements
+[MiniNDN](https://github.com/named-data/mini-ndn) and all its dependencies.
+
 ## Running scenarios
 Build using `./build.sh`. Builds producer.cpp and consumer.cpp and copies to `/tmp/minindn/apps`. This could then be accessed by minindn nodes as shown below.
 
