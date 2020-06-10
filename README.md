@@ -42,3 +42,5 @@ Change the following parameters in `src/experiment.py` to if required:
 
 Host 'a' is producer with producer already running in background. 
 Run `<host> ../apps/consumer` in other hosts.
+
+Exit MiniNDN, `./run.sh` proceeds- tshark now merges all the `.pcap` files and prints udp packet log.
