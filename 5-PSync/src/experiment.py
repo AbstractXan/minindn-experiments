@@ -32,22 +32,31 @@ if __name__ == '__main__':
     info('Adding static routes to NFD\n')
     grh = NdnRoutingHelper(ndn.net, ndn.args.faceType, ndn.args.routingType)
 
-    ####### Configuring nodes based on input parameters
     info("\nConfiguring nodes\n\n")
     for host in ndn.net.hosts:
-	value = host.params['params'].get('type',"client")
-	if (value=="server"):
-            data_prefix = host.params['params'].get('prefix',"/example/testApp")
-            # For all host, pass ndn.net.hosts or a list, [ndn.net['a'], ..] or [ndn.net.hosts[0],.]
-            grh.addOrigin([ndn.net[str(host)]], [data_prefix])
-            info(str(host) + " declared producer for " + data_prefix+"\n")
-        run_cmd = host.params['params'].get('run')
-	if(run_cmd):
-	    host.cmd(run_cmd+' &')
+        value = host.params['params'].get('type',"consumer")
+        if (value=="producer"):
+            host.cmd('export NDN_LOG=examples.PartialSyncProducerApp=INFO')
+        if (value=="consumer"):
+            host.cmd('export NDN_LOG=examples.PartialSyncConsumerApp=INFO')
+
+        #### Multiple prefixes
+        data = host.params['params'].get('prefix',"")
+        if(data):
+            data = data.split("+")
+            for data_prefix in data:
+                grh.addOrigin([ndn.net[str(host)]], [data_prefix])
+                info(str(host) + " declared producer for " + data_prefix+"\n")
+        #####
+
+        run_cmd = host.params['params'].get('run')    
+        if(run_cmd):
+            run_cmd = run_cmd.replace("+"," ")
+            host.cmd(run_cmd+' &')
             info(str(host) + " is running "+ run_cmd+"\n")
+
     info("\n")
     grh.calculateNPossibleRoutes()
-    ######## 
 
     MiniNDNCLI(ndn.net)
 

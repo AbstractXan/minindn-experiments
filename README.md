@@ -53,3 +53,23 @@ Host 'a' is producer with producer already running in background.
 Run `<host> ../apps/consumer` in other hosts.
 
 Exit MiniNDN, `./run.sh` proceeds- tshark now merges all the `.pcap` files and prints udp packet log.
+
+### Scenario 5: PSync
+
+[Asciinema demo](https://asciinema.org/a/2FY57d9WlgROPOAw0DErwI9Ro)
+
+Run `./build.sh` followed by `./run.sh`. This will open mini-ndn.
+
+Run `mini-ndn> a ../apps/producer /sync /a 10 1 &`
+
+Run `mini-ndn> b ../apps/consumer /sync 5`
+
+Change `./src/topology.conf` to configure nodes as follows:
+1. type : 
+	- _Values_ : producer/consumer  (default value: consumer)
+	- Identifies the type of node
+	- Setup and displays logs
+2. prefix : 
+	- _Values_ :(default: /example/testApp)
+	- Configures FIBs of other nodes with the current node as producer of the data prefix 
+	- **REQUIRED for producer**
