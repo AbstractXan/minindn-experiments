@@ -1,6 +1,9 @@
 # minindn-experiments
 Experiments running NDN applications on Mini-NDN.
 
+## Requirements
+[MiniNDN](https://github.com/named-data/mini-ndn) and all its dependencies.
+
 ## Running scenarios
 Build using `./build.sh`. Builds producer.cpp and consumer.cpp and copies to `/tmp/minindn/apps`. This could then be accessed by minindn nodes as shown below.
 
@@ -11,6 +14,9 @@ Host 'a' is producer with producer already running in background.
 Run `<host> ../apps/consumer` in other hosts.
 
 ### Scenario 2: Topology.conf
+
+[Asciinema demo](https://asciinema.org/a/gbkU4ITHnt4fs9buS5YcT5r0b)
+
 Change `./src/topology.conf` to configure nodes as follows:
 1. type : 
 	- _Values_ : server/client  (default value: client)
@@ -31,6 +37,9 @@ Host 'a' is producer with producer already running in background.
 Run `<host> ../apps/consumer` in other hosts.
 
 ### Scenario 3 : PCAP Logging
+
+[Asciinema demo](https://asciinema.org/a/WnwGRzs4NTZTU1WVKUHUnNP8I)
+
 Default logging done in `/tmp/minindn/log`.
 Logging is done using tshark as shown in `src/experiment.py` :
 ```python
