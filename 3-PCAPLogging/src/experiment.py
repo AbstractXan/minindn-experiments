@@ -55,6 +55,10 @@ if __name__ == '__main__':
     info("\n")
     grh.calculateNPossibleRoutes()
 
+    info("\n'a' has been initialised as the producer\n")
+    info('Run <host> ../apps/consumer to define consumers\n')
+    info("Logs will be stored in /tmp/minindn/logs\n")
+
     MiniNDNCLI(ndn.net)
 
     ndn.stop()

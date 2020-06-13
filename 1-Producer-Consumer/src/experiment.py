@@ -77,7 +77,9 @@ if __name__ == '__main__':
        #host.cmd("export HOME=/tmp/minindn/"+str(host)+"; cd;")
     ndn.net['a'].cmd("../apps/producer &")
     #######
-
+    info(' ')
+    info("\n'a' has been initialised as the producer\n")
+    info('Run <host> ../apps/consumer to define consumers\n')
     MiniNDNCLI(ndn.net)
 
     ndn.stop()

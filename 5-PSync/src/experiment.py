@@ -58,6 +58,8 @@ if __name__ == '__main__':
     info("\n")
     grh.calculateNPossibleRoutes()
 
+    info("\nRun mini-ndn> a ../apps/producer /sync /a 10 1 &\n")
+    info("Run mini-ndn> b ../apps/consumer /sync 5\n\n")
     MiniNDNCLI(ndn.net)
 
     ndn.stop()

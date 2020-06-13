@@ -49,6 +49,9 @@ if __name__ == '__main__':
     grh.calculateNPossibleRoutes()
     ######## 
 
+    info("\n'a' has been initialised as the producer\n")
+    info('Run <host> ../apps/consumer to define consumers\n')
+
     MiniNDNCLI(ndn.net)
 
     ndn.stop()
