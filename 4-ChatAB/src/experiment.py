@@ -47,7 +47,11 @@ if __name__ == '__main__':
             info(str(host) + " is running "+ run_cmd+"\n")
     info("\n")
     grh.calculateNPossibleRoutes()
-    ######## 
+    ########
+
+    info("\nRun mininet>xterm a b\n")
+    info("Open a and run- `export HOME=/tmp/minindn/a ; cd ; ../apps/chat_a`\n")
+    info("Open b and run- `export HOME=/tmp/minindn/a ; cd ; ../apps/chat_b`\n")
 
     MiniNDNCLI(ndn.net)
 

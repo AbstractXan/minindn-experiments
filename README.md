@@ -11,5 +11,3 @@ Run experiment: `./run.sh`
 
 Details of experiments [Experiments.md]()
 
-## Known issues
-Experiment 4 : ChatAB : Unable to run a and b in xterm.

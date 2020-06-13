@@ -44,7 +44,12 @@ Run `<host> ../apps/consumer` in other hosts.
 Exit MiniNDN, `./run.sh` proceeds- tshark now merges all the `.pcap` files and prints udp packet log.
 
 ### Scenario 4: ChatAB
+Run `./build.sh` followed by `./run.sh`
 
+Run `mini-ndn> xterm a b`
+
+For host 'a': `export HOME=/tmp/minindn/a ; cd ; ../apps/chat_a`
+For host 'b': `export HOME=/tmp/minindn/b ; cd ; ../apps/chat_b`
 
 ### Scenario 5: PSync
 
