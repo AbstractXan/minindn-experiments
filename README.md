@@ -9,5 +9,4 @@ Build using `./build.sh`. Builds files and copies applications to `/tmp/minindn/
 
 Run experiment: `./run.sh`
 
-Details of experiments [Experiments.md]()
-
+Details of experiments : [experiments.md](./Experiments.md)
