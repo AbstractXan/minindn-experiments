@@ -9,7 +9,7 @@ Build using `./build.sh`. Builds files and copies applications to `/tmp/minindn/
 
 Run experiment: `./run.sh`
 
-Details of experiments [Experiments.md]()
+Details of experiments : [experiments.md](./Experiments.md)
 
 ## Known issues
 Experiment 4 : ChatAB : Unable to run a and b in xterm.
